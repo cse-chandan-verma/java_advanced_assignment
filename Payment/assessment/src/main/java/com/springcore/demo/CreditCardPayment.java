@@ -1,0 +1,35 @@
+package com.springcore.demo;
+
+
+import org.springframework.beans.factory.DisposableBean;
+import org.springframework.beans.factory.InitializingBean;
+import org.springframework.context.annotation.Primary;
+import org.springframework.context.annotation.Scope;
+import org.springframework.stereotype.Component;
+
+@Component
+@Scope("singleton")
+@Primary   
+public class CreditCardPayment implements Payment, InitializingBean, DisposableBean {
+
+    public CreditCardPayment() {
+        System.out.println("CreditCardPayment Bean Created");
+    }
+
+    @Override
+    public void pay(double amount) {
+        System.out.println("Credit Card payment of Rs. " + amount + " successful");
+    }
+
+    // Initialization
+    @Override
+    public void afterPropertiesSet() {
+        System.out.println("CreditCardPayment Bean Initialized");
+    }
+
+    // Destruction
+    @Override
+    public void destroy() {
+        System.out.println("CreditCardPayment Bean Destroyed");
+    }
+}
