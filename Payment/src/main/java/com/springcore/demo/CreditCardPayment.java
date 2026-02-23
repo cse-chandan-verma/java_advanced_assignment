@@ -1,6 +1,5 @@
 package com.springcore.demo;
 
-
 import org.springframework.beans.factory.DisposableBean;
 import org.springframework.beans.factory.InitializingBean;
 import org.springframework.context.annotation.Primary;
@@ -9,7 +8,7 @@ import org.springframework.stereotype.Component;
 
 @Component
 @Scope("singleton")
-@Primary   
+@Primary   // Default bean
 public class CreditCardPayment implements Payment, InitializingBean, DisposableBean {
 
     public CreditCardPayment() {

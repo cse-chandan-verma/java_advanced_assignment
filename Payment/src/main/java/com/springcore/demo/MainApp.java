@@ -10,7 +10,6 @@ public class MainApp {
                 new AnnotationConfigApplicationContext(AppConfig.class);
 
         // Default Bean (CreditCardPayment because of @Primary)
-        
         Payment payment = context.getBean(Payment.class);
         payment.pay(5000);
 
