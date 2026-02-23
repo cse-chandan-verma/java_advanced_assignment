@@ -1,5 +1,0 @@
-package com.springcore.demo;
-
-public interface Engine {
-	public void getEngine();
-}
